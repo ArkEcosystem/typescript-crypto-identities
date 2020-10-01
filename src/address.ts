@@ -1,5 +1,5 @@
 import { Base58 } from "./base58";
-import { IMultiSignatureAsset, KeyPair } from "./contracts";
+import { MultiSignatureAsset, KeyPair } from "./contracts";
 import { PublicKeyError } from "./errors";
 import { HashAlgorithms } from "./hash-algorithms";
 import { PrivateKey } from "./private-key";
@@ -28,7 +28,7 @@ export class Address {
         return Address.fromPublicKey(PublicKey.fromWIF(wif, options), options);
     }
 
-    public static fromMultiSignatureAsset(asset: IMultiSignatureAsset, options: { pubKeyHash: number }): string {
+    public static fromMultiSignatureAsset(asset: MultiSignatureAsset, options: { pubKeyHash: number }): string {
         return this.fromPublicKey(PublicKey.fromMultiSignatureAsset(asset), options);
     }
 

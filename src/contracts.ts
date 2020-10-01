@@ -4,18 +4,7 @@ export interface KeyPair {
     compressed: boolean;
 }
 
-export interface IDecryptResult {
-    privateKey: Buffer;
-    compressed: boolean;
-}
-
-export interface IMultiSignatureLegacyAsset {
-    min: number;
-    lifetime: number;
-    keysgroup: string[];
-}
-
-export interface IMultiSignatureAsset {
+export interface MultiSignatureAsset {
     min: number;
     publicKeys: string[];
 }

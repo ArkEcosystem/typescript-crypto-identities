@@ -1,6 +1,6 @@
 import { secp256k1 } from "bcrypto";
 
-import { IMultiSignatureAsset } from "./contracts";
+import { MultiSignatureAsset } from "./contracts";
 import { InvalidMultiSignatureAssetError, PublicKeyError } from "./errors";
 import { numberToHex } from "./helpers";
 import { Keys } from "./keys";
@@ -14,8 +14,8 @@ export class PublicKey {
         return Keys.fromWIF(wif, options).publicKey;
     }
 
-    public static fromMultiSignatureAsset(asset: IMultiSignatureAsset): string {
-        const { min, publicKeys }: IMultiSignatureAsset = asset;
+    public static fromMultiSignatureAsset(asset: MultiSignatureAsset): string {
+        const { min, publicKeys }: MultiSignatureAsset = asset;
 
         for (const publicKey of publicKeys) {
             if (!this.verify(publicKey)) {

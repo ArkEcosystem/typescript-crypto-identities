@@ -1,5 +1,6 @@
-export { Address } from "./address";
-export { Keys } from "./keys";
-export { PrivateKey } from "./private-key";
-export { PublicKey } from "./public-key";
-export { WIF } from "./wif";
+export * from "./address";
+export * from "./contracts";
+export * from "./keys";
+export * from "./private-key";
+export * from "./public-key";
+export * from "./wif";
