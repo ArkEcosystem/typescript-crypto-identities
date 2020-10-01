@@ -1,9 +1,9 @@
 import "jest-extended";
 
-import { WIF } from "./wif";
 import { data, passphrase } from "../test/identity.json";
 import { devnet } from "../test/networks.json";
 import { Keys } from "./keys";
+import { WIF } from "./wif";
 
 describe("Identities - WIF", () => {
     describe("fromPassphrase", () => {

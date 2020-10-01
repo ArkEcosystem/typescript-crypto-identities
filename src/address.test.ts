@@ -1,12 +1,11 @@
 import "jest-extended";
 
-import { PublicKey } from "./public-key";
-
-import { InvalidMultiSignatureAssetError, PublicKeyError } from "./errors";
-import { Address } from "./address";
-import { Keys } from "./keys";
 import { data, passphrase } from "../test/identity.json";
 import { devnet, mainnet } from "../test/networks.json";
+import { Address } from "./address";
+import { InvalidMultiSignatureAssetError, PublicKeyError } from "./errors";
+import { Keys } from "./keys";
+import { PublicKey } from "./public-key";
 
 describe("Identities - Address", () => {
     describe("fromPassphrase", () => {

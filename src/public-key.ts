@@ -1,7 +1,7 @@
 import { secp256k1 } from "bcrypto";
 
-import { InvalidMultiSignatureAssetError, PublicKeyError } from "./errors";
 import { IMultiSignatureAsset } from "./contracts";
+import { InvalidMultiSignatureAssetError, PublicKeyError } from "./errors";
 import { numberToHex } from "./helpers";
 import { Keys } from "./keys";
 

@@ -1,8 +1,8 @@
 import "jest-extended";
 
-import { HashAlgorithms } from "./hash-algorithms";
 import { Base58 } from "./base58";
 import { InvalidBase58ChecksumError } from "./errors";
+import { HashAlgorithms } from "./hash-algorithms";
 
 const createPayload = () => {
     const buffer: Buffer = HashAlgorithms.ripemd160(

@@ -22,6 +22,9 @@
         "clean": "del dist",
         "compile": "./node_modules/typescript/bin/tsc",
         "prepublishOnly": "yarn build",
+        "format": "yarn run lint && yarn run prettier",
+        "lint": "eslint src/** --ext .ts --fix",
+        "prettier": "prettier --write \"./*.{ts,js,json,md}\" \"./**/*.{ts,js,json,md}\"",
         "test": "cross-env CORE_ENV=test jest --forceExit",
         "test:coverage": "cross-env CORE_ENV=test jest --coverage --coveragePathIgnorePatterns='/(defaults.ts|index.ts)$' --runInBand --forceExit"
     },

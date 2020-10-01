@@ -1,7 +1,8 @@
-import { HashAlgorithms } from "./hash-algorithms";
-import { PublicKeyError } from "./errors";
-import { IMultiSignatureAsset } from "./contracts";
 import { Base58 } from "./base58";
+import { IMultiSignatureAsset, KeyPair } from "./contracts";
+import { PublicKeyError } from "./errors";
+import { HashAlgorithms } from "./hash-algorithms";
+import { PrivateKey } from "./private-key";
 import { PublicKey } from "./public-key";
 
 export class Address {
@@ -31,7 +32,7 @@ export class Address {
         return this.fromPublicKey(PublicKey.fromMultiSignatureAsset(asset), options);
     }
 
-    public static fromPrivateKey(privateKey, options: { pubKeyHash: number }): string {
+    public static fromPrivateKey(privateKey: KeyPair, options: { pubKeyHash: number }): string {
         return Address.fromPublicKey(privateKey.publicKey, options);
     }
 

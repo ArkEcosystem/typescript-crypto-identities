@@ -1,7 +1,7 @@
 import { base58 } from "bstring";
 import moize from "fast-memoize";
-import { InvalidBase58ChecksumError } from "./errors";
 
+import { InvalidBase58ChecksumError } from "./errors";
 import { HashAlgorithms } from "./hash-algorithms";
 
 const encodeCheck = (buffer: Buffer): string => {

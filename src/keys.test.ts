@@ -3,10 +3,10 @@ import "jest-extended";
 // @ts-ignore
 import wif from "wif";
 
-import { Address } from "./address";
-import { Keys } from "./keys";
 import { data, passphrase } from "../test/identity.json";
 import { devnet } from "../test/networks.json";
+import { Address } from "./address";
+import { Keys } from "./keys";
 
 describe("Identities - Keys", () => {
     describe("fromPassphrase", () => {

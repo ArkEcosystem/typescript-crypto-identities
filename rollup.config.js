@@ -58,9 +58,7 @@ const browserConfig = {
         {
             file: pkg.unpkg,
             format: "esm",
-            plugins: [
-                terser(),
-            ]
+            plugins: [terser()],
         },
         {
             file: pkg.browser,
