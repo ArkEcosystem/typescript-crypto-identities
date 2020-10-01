@@ -1,5 +1,6 @@
 import { base58 } from "bstring";
 import moize from "fast-memoize";
+import { InvalidBase58ChecksumError } from "./errors";
 
 import { HashAlgorithms } from "./hash-algorithms";
 
@@ -15,7 +16,7 @@ const decodeCheck = (address: string): Buffer => {
     const checksum: Buffer = HashAlgorithms.hash256(payload);
 
     if (checksum.readUInt32LE(0) !== buffer.slice(-4).readUInt32LE(0)) {
-        throw new Error("Invalid checksum");
+        throw new InvalidBase58ChecksumError();
     }
 
     return payload;

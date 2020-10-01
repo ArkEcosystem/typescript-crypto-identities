@@ -45,3 +45,9 @@ export class InvalidMultiSignatureAssetError extends CryptoError {
         super(`The multi signature asset is invalid.`);
     }
 }
+
+export class InvalidBase58ChecksumError extends CryptoError {
+    public constructor() {
+        super("Invalid checksum for base58 string.");
+    }
+}

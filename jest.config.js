@@ -1,7 +1,6 @@
 module.exports = {
-    bail: false,
-    collectCoverage: false,
-    collectCoverageFrom: ["src/**/*.ts", "!**/node_modules/**"],
+    collectCoverage: true,
+    collectCoverageFrom: ["src/**/*.ts", "!src/contracts.ts", "!src/errors.ts", "!src/index.ts", "!**/node_modules/**"],
     coverageDirectory: "<rootDir>/.coverage",
     coverageReporters: ["json", "lcov", "text", "clover", "html"],
     moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
@@ -11,18 +10,17 @@ module.exports = {
     transform: {
         "^.+\\.tsx?$": "ts-jest",
     },
-    verbose: true,
     globals: {
         "ts-jest": {
             packageJson: "./package.json",
         },
     },
-    // coverageThreshold: {
-    //     global: {
-    //         branches: 100,
-    //         functions: 100,
-    //         lines: 100,
-    //         statements: 100,
-    //     },
-    // },
+    coverageThreshold: {
+        global: {
+            branches: 100,
+            functions: 100,
+            lines: 100,
+            statements: 100,
+        },
+    },
 };

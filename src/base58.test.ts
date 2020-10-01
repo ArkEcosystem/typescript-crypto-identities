@@ -2,6 +2,7 @@ import "jest-extended";
 
 import { HashAlgorithms } from "./hash-algorithms";
 import { Base58 } from "./base58";
+import { InvalidBase58ChecksumError } from "./errors";
 
 const createPayload = () => {
     const buffer: Buffer = HashAlgorithms.ripemd160(
@@ -22,5 +23,6 @@ describe("Base58", () => {
 
     it("decodeCheck", () => {
         expect(Base58.decodeCheck("D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib")).toEqual(createPayload());
+        expect(() => Base58.decodeCheck("A61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib")).toThrow(InvalidBase58ChecksumError);
     });
 });
