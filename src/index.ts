@@ -1,5 +1,6 @@
 export * from "./address";
-export * from "./contracts";
+export * as Contracts from "./contracts";
+export * as Errors from "./errors";
 export * from "./keys";
 export * from "./private-key";
 export * from "./public-key";
