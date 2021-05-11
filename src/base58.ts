@@ -36,7 +36,7 @@ export const Base58 = {
         cache: {
             // @ts-ignore
             create: () => {
-                return new Cache<string, string>(10000);
+                return new Cache<string, Buffer>(10000);
             },
         },
     }),
