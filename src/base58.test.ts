@@ -19,6 +19,8 @@ const createPayload = () => {
 describe("Base58", () => {
     it("encodeCheck", () => {
         expect(Base58.encodeCheck(createPayload())).toBe("D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib");
+        // Check cached
+        expect(Base58.encodeCheck(createPayload())).toBe("D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib");
     });
 
     it("decodeCheck", () => {

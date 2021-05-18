@@ -1,6 +1,7 @@
 import { base58 } from "bstring";
 import moize from "fast-memoize";
 
+import { Cache } from "./cache";
 import { InvalidBase58ChecksumError } from "./errors";
 import { HashAlgorithms } from "./hash-algorithms";
 
@@ -23,6 +24,20 @@ const decodeCheck = (address: string): Buffer => {
 };
 
 export const Base58 = {
-    encodeCheck: moize(encodeCheck),
-    decodeCheck: moize(decodeCheck),
+    encodeCheck: moize(encodeCheck, {
+        cache: {
+            // @ts-ignore
+            create: () => {
+                return new Cache<string, string>(10000);
+            },
+        },
+    }),
+    decodeCheck: moize(decodeCheck, {
+        cache: {
+            // @ts-ignore
+            create: () => {
+                return new Cache<string, Buffer>(10000);
+            },
+        },
+    }),
 };
